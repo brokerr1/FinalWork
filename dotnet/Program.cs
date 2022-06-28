@@ -4,6 +4,8 @@ Console.WriteLine("Дан исходный массив:");
 PrintArrayString(arrString);
 Console.WriteLine("Идет обработка массива ...");
 string[] newArrString = CorrectionArrayString(arrString);
+Console.WriteLine("Новый массив имеет вид:");
+PrintArrayString(newArrString);
 string[] CorrectionArrayString(string[] array)
 {
     int count = 0;
@@ -15,6 +17,16 @@ string[] CorrectionArrayString(string[] array)
         }
     }
     string[] newArray = new string[count];
+    int n = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (array[i].Length <= 3)
+        {
+            newArray[n] = array[i];
+            n++;
+        }
+    }
+    return newArray;
 }
 void PrintArrayString(string[] array)
 {
